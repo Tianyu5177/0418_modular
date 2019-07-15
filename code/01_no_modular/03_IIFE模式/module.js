@@ -4,25 +4,23 @@
  * 作用: 数据是私有的, 外部只能通过暴露的方法操作
  * 问题: 如果当前这个模块依赖另一个模块怎么办?
  */
-((window)=> {
+
+((a)=> {
+
   //数据
-  let data = 'atguigu.com'
+  let data = 'atguigu'
 
   //操作数据的函数
   function foo() {
-    console.log(`foo() ${data}`)
+    console.log(`我是foo函数---${data}`)
   }
 
+  //操作数据的函数
   function bar() {
-    console.log(`bar() ${data}`)
-    otherFun() //内部调用
+    console.log(`我是bar函数---${data}`)
   }
 
-  function otherFun() {
-    console.log('otherFun()')
-  }
+  a.myModule1 = {foo,bar}
 
-  //暴露行为
-  window.myModule = {foo, bar}
 })(window)
 
