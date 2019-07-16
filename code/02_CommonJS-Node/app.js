@@ -4,10 +4,12 @@ let module3 = require('./modules/module3')
 let uniq = require('uniq')
 
 
+console.log(module1)
 
-console.log(module1.name)
-console.log(module1.age)
-module2()
+
+
+
+/*module2()
 console.log(module3)
 let arr = [4,4,4,1,2,6,5,5,5,5,4,3,11,10,13]
-console.log(uniq(arr))
+console.log(uniq(arr))*/
