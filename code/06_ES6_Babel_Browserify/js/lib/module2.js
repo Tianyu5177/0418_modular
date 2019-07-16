@@ -17,9 +17,13 @@ function foo2() {
 
 var arr = [1, 3, 5, 7, 9];
 
-var person = { name: 'kobe', age: 18 };
+var person = { name: 'kobe', age: 18
 
-exports.foo1 = foo1;
-exports.foo2 = foo2;
-exports.arr = arr;
-exports.person = person;
+  //简写方式
+  //export {foo1,foo2,arr,person}
+
+  //完整写法
+};exports.haha1 = foo1;
+exports.haha2 = foo2;
+exports.haha3 = arr;
+exports.haha4 = person;

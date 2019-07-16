@@ -9,24 +9,43 @@ var _module3 = require('./module3');
 
 var _module4 = _interopRequireDefault(_module3);
 
+var _module5 = require('./module4');
+
+var _module6 = _interopRequireDefault(_module5);
+
 var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//引入【分别暴露】的模块
-(0, _jquery2.default)('body').css('background', 'skyblue');
+/*$('body').css('background','skyblue')
+demo()
+test()
+foo1()
+foo2()
+let p1 = new module3('kobe',19)
+p1.speak()*/
+
+//import * as module3 from './module3'
+
+//引入module4，module4即使用了默认暴露，也使用了分别暴露
+
+//import * as module1 from './module1' //这种写法会将所有module1里暴露内容收集到一个对象里
 
 //引入【统一暴露】的模块
+(0, _module6.default)();
 
-(0, _module.demo)();
-(0, _module.test)();
-(0, _module2.foo1)();
-(0, _module2.foo2)();
-var p1 = new _module4.default('kobe', 19);
-p1.speak();
-},{"./module1":2,"./module2":3,"./module3":4,"jquery":5}],2:[function(require,module,exports){
+//引入第三方模块
+
+//import * as module2 from './module2'
+
+//引入【默认暴露】的模块
+//引入【分别暴露】的模块
+
+(0, _module5.fun)();
+(0, _module5.fun2)();
+},{"./module1":2,"./module2":3,"./module3":4,"./module4":5,"jquery":6}],2:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -72,12 +91,16 @@ function foo2() {
 
 var arr = [1, 3, 5, 7, 9];
 
-var person = { name: 'kobe', age: 18 };
+var person = { name: 'kobe', age: 18
 
-exports.foo1 = foo1;
-exports.foo2 = foo2;
-exports.arr = arr;
-exports.person = person;
+  //简写方式
+  //export {foo1,foo2,arr,person}
+
+  //完整写法
+};exports.haha1 = foo1;
+exports.haha2 = foo2;
+exports.haha3 = arr;
+exports.haha4 = person;
 },{}],4:[function(require,module,exports){
 "use strict";
 
@@ -113,6 +136,32 @@ var Person = function () {
 
 exports.default = Person;
 },{}],5:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function () {
+  console.log('module4');
+};
+
+exports.fun = fun;
+
+
+/*分别暴露*/
+function fun() {
+  console.log('module4------test');
+} /*默认暴露*/
+
+
+function fun2() {
+  console.log('module4------fun2');
+}
+
+/*统一暴露*/
+exports.fun2 = fun2;
+},{}],6:[function(require,module,exports){
 /*!
  * jQuery JavaScript Library v3.4.1
  * https://jquery.com/
