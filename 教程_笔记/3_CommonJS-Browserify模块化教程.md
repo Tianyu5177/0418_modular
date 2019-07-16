@@ -62,9 +62,7 @@
     ```
 
 ### 3. 下载browserify(用于把CommonJS的模块化语法，翻译成浏览器认识的语法，一个“翻译官”)
-  * 第一步，执行全局安装命令: ```npm install browserify -g```（若此步骤报错，请使用管理员身份打开webstorm，再次执行即可）
-  * 第二步，执行局部安装命令: ```npm install browserify --save-dev```
-  * 备注：以上两步骤都要执行，缺一不可！
+  * 全局安装browserify，命令: ```npm install browserify -g```（若此步骤报错，请使用管理员身份打开webstorm，再次执行即可）
   
 ### 4. 执行处理命令
   * 第一步，cd到指定文件夹（03_CommonJS-Browserify）
