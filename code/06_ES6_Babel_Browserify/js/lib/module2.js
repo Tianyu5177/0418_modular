@@ -1,0 +1,25 @@
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+/*
+* 统一暴露
+* */
+
+function foo1() {
+  console.log('module2-----foo1');
+}
+
+function foo2() {
+  console.log('module2-----foo1');
+}
+
+var arr = [1, 3, 5, 7, 9];
+
+var person = { name: 'kobe', age: 18 };
+
+exports.foo1 = foo1;
+exports.foo2 = foo2;
+exports.arr = arr;
+exports.person = person;
